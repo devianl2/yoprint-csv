@@ -16,7 +16,7 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-8">
-                        <input type="file" name="csvFile" >
+                        <input type="file" name="csvFile" accept="text/csv">
                     </div>
                     <div class="col-md-4">
                         <input type="submit" class="btn btn-primary" value="Upload File">
@@ -38,7 +38,13 @@
             </tr>
             </thead>
             <tbody>
-
+                @foreach($jobStatus as $jobStatus)
+                    <tr>
+                        <td>{{$jobStatus->created_at}} <br/> ({{$jobStatus->created_at->diffForHumans()}})</td>
+                        <td>{{$jobStatus->filename}}</td>
+                        <td>{{$jobStatus->status}}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

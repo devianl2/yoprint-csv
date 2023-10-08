@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('sanmar_mainframe_color');
             $table->string('size');
             $table->string('color_name');
-            $table->decimal('color_name', 12,2);
+            $table->decimal('piece_price', 12,2);
             $table->timestamps();
         });
     }
