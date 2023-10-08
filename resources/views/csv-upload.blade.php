@@ -9,12 +9,14 @@
 </head>
 <body>
 <section class="py-5 text-center container">
+    @include('elements.message')
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <form enctype="multipart/form-data">
+            <form action="{{route('csv.upload')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                     <div class="col-md-8">
-                        <input type="file"  accept=".csv">
+                        <input type="file" name="csvFile" >
                     </div>
                     <div class="col-md-4">
                         <input type="submit" class="btn btn-primary" value="Upload File">
@@ -36,23 +38,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+
             </tbody>
         </table>
     </div>
