@@ -13,4 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\UploadController::class, 'index']);
+Route::name('csv.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\UploadController::class, 'index'])->name('index');
+    Route::post('/csv-upload', [\App\Http\Controllers\UploadController::class, 'csvUpload'])->name('upload');
+});
+

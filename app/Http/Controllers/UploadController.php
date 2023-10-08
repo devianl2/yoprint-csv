@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CsvUploadRequest;
 use Illuminate\Http\Request;
 
 class UploadController extends Controller
@@ -15,5 +16,15 @@ class UploadController extends Controller
     public function index()
     {
         return view('csv-upload');
+    }
+
+    /**
+     * Handle the CSV upload.
+     * @param CsvUploadRequest $request
+     * @return void
+     */
+    public function csvUpload(CsvUploadRequest $request)
+    {
+
     }
 }
